@@ -1,0 +1,21 @@
+NextJS.12
+react 
+debounce
+tailwindcss
+spotify api
+
+oauth jwt
+access/refresh
+tokens
+
+nextauth
+recoil
+
+tailwind scrollbar hide
+recoil
+
+Initial Fetching fails -->prefetch with SSR
+
+optional chaining
+
+react-icons
