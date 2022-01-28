@@ -45,7 +45,7 @@ function Player() {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
       //  fetch the song info
       fetchCurrentSong();
-      setVolume(50);
+      setVolume(70);
     }
   }, [currentTrackIdState, spotifyApi, session]);
   const handlePlayPause = () => {
@@ -68,7 +68,7 @@ function Player() {
     debounce((voulume) => {
       spotifyApi.setVolume(voulume).catch(() => {});
     }, 500),
-    []
+    [volume]
   );
   return (
     <div className="sm:h-24 md:h-16  bg-gradient-to-b from-black to-gray-900 text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-8">
@@ -79,7 +79,7 @@ function Player() {
           src={songInfo?.album?.images?.[0]?.url ?? "/profile.jpg"}
           alt=""
         />
-        <div>
+        <div className="truncate">
           <h3>{songInfo?.name ?? "Play Date"}</h3>
           <p>{songInfo?.artists?.[0]?.name ?? "Melanie Martinez"}</p>
         </div>
@@ -124,14 +124,14 @@ function Player() {
               });
           }}
         />
-        <VolumeOffIcon
+        {/* <VolumeOffIcon
           className="button"
           onClick={() => {
             setVolume((volume) => {
               return 0;
             });
           }}
-        />
+        /> */}
       </div>
     </div>
   );
